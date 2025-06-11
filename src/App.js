@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaEnvelope, FaUser, FaCommentDots } from "react-icons/fa";
 import './App.css';
 import { useEffect, useRef } from 'react';
 
@@ -1260,21 +1261,73 @@ function Testimonials() {
     </section>
   );
 }
-
-function Contact() {
+function Gallerysection(){
   return (
-    <section id="contact">
-      ## Contact Us
-      <p>Email us at: contact@zelioncricket.com</p>
+    <section id="Gallery-section" className="gallery-section">
+      <img src="/images/cric.jpg" alt="zelion" className="image"/> 
+      <a href="https://zelioncricket.com" target="_blank" rel="nooperner noreferrer">
+      <button className='gallery-button'>visit here</button></a>
     </section>
   );
 }
+
+
+function Contact() {
+  return (
+    <section id="contact" className="contact-section">
+      <h2>📬 Contact Us</h2>
+      <p>
+        We'd love to hear from you! Fill out the form below or email us at{" "}
+        <strong>contact@zelioncricket.com</strong>
+      </p>
+
+      <form className="contact-form">
+        <div className="contact-field">
+          <FaUser />
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="contact-input"
+            required
+          />
+        </div>
+
+        <div className="contact-field">
+          <FaEnvelope />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="contact-input"
+            required
+          />
+        </div>
+
+        <div className="contact-field">
+          <FaCommentDots style={{ marginTop: "0.5rem" }} />
+          <textarea
+            placeholder="Your Message"
+            rows="4"
+            className="contact-textarea"
+            required
+          />
+        </div>
+
+        <button type="submit" className="contact-button">
+          Send Message
+        </button>
+      </form>
+    </section>
+  );
+}
+
+
 
 function App() {
   return (
     <div>
       <SplashCursor />
       <Navbar />
+       <Gallerysection/>
       <Home />
       <About />
       <Products />
